@@ -32,7 +32,7 @@ echo_failed_command() {
 trap echo_failed_command EXIT
 
 # Global variables
-export SONARLESS_SOURCES="https://raw.githubusercontent.com/gitricko/sonarless/main/makefile.sh"  # URL where makefile.sh is hosted
+export SONARLESS_SOURCES="https://raw.githubusercontent.com/jhersonharyson/sonarless/main/makefile.sh"  # URL where makefile.sh is hosted
 
 if [ -z "$SONARLESS_DIR" ]; then
     SONARLESS_DIR="$HOME/.sonarless"
