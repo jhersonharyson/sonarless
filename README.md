@@ -130,7 +130,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sonarless Scan
-        uses: gitricko/sonarless@v1.1
+        uses: jhersonharyson/sonarless@v0.0.3
         with:
           sonar-source-path: 'src'
           sonar-metrics-path: './sonar-mymetrics.json'
@@ -154,7 +154,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sonarless Scan
-        uses: gitricko/sonarless@v1.1
+        uses: jhersonharyson/sonarless@v0.0.3
         with:
           sonar-instance-port: '1234'
 ```
