@@ -53,3 +53,8 @@ runs:
         SONAR_METRICS_PATH: ${{inputs.sonar-metrics-path}}
         SONAR_INSTANCE_PORT: ${{ inputs.sonar-instance-port }}
         SONAR_GITROOT: ${{ github.workspace }}
+        
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - run: node ./fetch.js
