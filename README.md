@@ -15,7 +15,7 @@ Please refer to the [release page](https://github.com/jhersonharyson/sonarless/r
 # Use Sonarless in your Local Dev
 
 To install CLI, paste and run the following in a terminal:
->  `curl -s "https://raw.githubusercontent.com/gitricko/sonarless/main/install.sh" | bash`
+>  `curl -s "https://raw.githubusercontent.com/jhersonharyson/sonarless/main/install.sh" | bash`
 
 ```ssh
                                                _ 
@@ -62,7 +62,7 @@ This CLI works perfectly with Github CodeSpace
 
 <!-- start usage -->
 ```yaml
-- uses: gitricko/sonarless@v1.1
+- uses: jhersonharyson/sonarless@0.0.3
   with:
     # Folder path to scan from git-root
     # Default: . 
@@ -100,7 +100,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sonarless Scan
-        uses: gitricko/sonarless@v1.1
+        uses: jhersonharyson/sonarless@0.0.3
 ```
 
 ## Scan particular folder from git root directory
@@ -114,7 +114,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sonarless Scan
-        uses: gitricko/sonarless@v1.1
+        uses: jhersonharyson/sonarless@0.0.3
         with:
           sonar-source-path: 'src'
 ```
