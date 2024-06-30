@@ -1,6 +1,6 @@
-name: "Sonarless Code Scan"
+name: "Sonar Headless Code Scan"
 description: "SonarQube Scan GitHub Action without a dedicated hosted SonarQube Server"
-author: "gitricko"
+author: "jhersonharyson"
 
 inputs:
   sonar-project-name:
