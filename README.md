@@ -4,13 +4,13 @@
 ![GitHub Release](https://img.shields.io/github/v/release/gitricko/sonarless)
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/gitricko/sonarless/latest)
 
-# Sonarless v1.1
+# Sonarless v0.0.3
 
 This developer-friendly CLI and GitHub Action enable SonarQube scanning for your repository without the need for a dedicated hosted SonarQube server. It starts a SonarQube Docker instance, allowing developers to scan code, check results, and generate a JSON metrics file for automation. This ensures you can easily assess and maintain the quality of your code.
 
 # What's new
 
-Please refer to the [release page](https://github.com/gitricko/sonarless/releases/latest) for the latest release notes.
+Please refer to the [release page](https://github.com/jhersonharyson/sonarless/releases/latest) for the latest release notes.
 
 # Use Sonarless in your Local Dev
 
