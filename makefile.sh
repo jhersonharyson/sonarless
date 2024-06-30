@@ -149,7 +149,7 @@ function scan() {
 
 function results() {
     # use this params to collect stats
-    curl -s -u "admin:sonarless" "http://localhost:${SONAR_INSTANCE_PORT}/api/measures/component?component=${SONAR_PROJECT_NAME}&metricKeys=bugs,vulnerabilities,code_smells,quality_gate_details,violations,duplicated_lines_density,ncloc,coverage,reliability_rating,security_rating,security_review_rating,sqale_rating,security_hotspots,open_issues" \
+    curl -s -u "admin:sonarless" "http://localhost:${SONAR_INSTANCE_PORT}/api/measures/component?component=${SONAR_PROJECT_NAME}&metricKeys=file_complexity,cognitive_complexity,bugs,vulnerabilities,code_smells,quality_gate_details,violations,duplicated_lines_density,ncloc,coverage,reliability_rating,security_rating,security_review_rating,sqale_rating,security_hotspots,open_issues,complexity,files,functions,reliability_rating" \
         | jq -r > "${SONAR_GITROOT}/${SONAR_METRICS_PATH}"
     cat "${SONAR_GITROOT}/${SONAR_METRICS_PATH}"
     echo "Scan results written to  ${SONAR_GITROOT}/${SONAR_METRICS_PATH}"
