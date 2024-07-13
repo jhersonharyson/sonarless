@@ -122,7 +122,7 @@ function scan() {
     docker run --rm --network "${CLI_NAME}" \
         -e SONAR_HOST_URL="http://${SONAR_INSTANCE_NAME}:9000"  \
         -e SONAR_TOKEN="${SONAR_TOKEN}" \
-        -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=${SONAR_PROJECT_NAME} -Dsonar.sources=${SONAR_SOURCE_PATH} -Dsonar.language=java -Dsonar.exclusions=**/*.java -Dsonar.scm.exclusions.disabled=true" \
+        -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=${SONAR_PROJECT_NAME} -Dsonar.sources=${SONAR_SOURCE_PATH}" \
         -v "${SONAR_GITROOT}:/usr/src" \
         "${DOCKER_SONAR_CLI}";
     SCAN_RET_CODE="$?"
@@ -149,7 +149,7 @@ function scan() {
 
 function results() {
     # use this params to collect stats
-    curl -s -u "admin:sonarless" "http://localhost:${SONAR_INSTANCE_PORT}/api/measures/component?component=${SONAR_PROJECT_NAME}&metricKeys=file_complexity,cognitive_complexity,bugs,vulnerabilities,code_smells,quality_gate_details,violations,duplicated_lines_density,ncloc,coverage,reliability_rating,security_rating,security_review_rating,sqale_rating,security_hotspots,open_issues,complexity,files,functions,reliability_rating,duplicated_lines,duplicated_blocks" \
+    curl -s -u "admin:sonarless" "http://localhost:${SONAR_INSTANCE_PORT}/api/measures/component?component=${SONAR_PROJECT_NAME}&metricKeys=file_complexity,cognitive_complexity,bugs,vulnerabilities,code_smells,quality_gate_details,violations,duplicated_lines_density,ncloc,coverage,reliability_rating,security_rating,security_review_rating,sqale_rating,security_hotspots,open_issues,complexity,files,functions,reliability_rating,duplicated_lines,duplicated_blocks,sqale_rating" \
         | jq -r > "${SONAR_GITROOT}/${SONAR_METRICS_PATH}"
     cat "${SONAR_GITROOT}/${SONAR_METRICS_PATH}"
     echo "Scan results written to  ${SONAR_GITROOT}/${SONAR_METRICS_PATH}"
