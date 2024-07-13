@@ -122,7 +122,7 @@ function scan() {
     docker run --rm --network "${CLI_NAME}" \
         -e SONAR_HOST_URL="http://${SONAR_INSTANCE_NAME}:9000"  \
         -e SONAR_TOKEN="${SONAR_TOKEN}" \
-        -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=${SONAR_PROJECT_NAME} -Dsonar.sources=${SONAR_SOURCE_PATH} -Dsonar.language=java -Dsonar.exclusions=**/*.java" \
+        -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=${SONAR_PROJECT_NAME} -Dsonar.sources=${SONAR_SOURCE_PATH} -Dsonar.language=java -Dsonar.exclusions=**/*.java -Dsonar.scm.exclusions.disabled=true" \
         -v "${SONAR_GITROOT}:/usr/src" \
         "${DOCKER_SONAR_CLI}";
     SCAN_RET_CODE="$?"
