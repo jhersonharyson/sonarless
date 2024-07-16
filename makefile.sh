@@ -122,7 +122,7 @@ function scan() {
     docker run --rm --network "${CLI_NAME}" \
         -e SONAR_HOST_URL="http://${SONAR_INSTANCE_NAME}:9000"  \
         -e SONAR_TOKEN="${SONAR_TOKEN}" \
-        -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=${SONAR_PROJECT_NAME} -Dsonar.sources=${SONAR_SOURCE_PATH} -Dsonar.java.binaries=. -Dsonar.coverage.jacoco.xmlReportPaths=binaries/build/reports/jacoco/test/jacocoTestReport.xml" \
+        -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=${SONAR_PROJECT_NAME} -Dsonar.sources=${SONAR_SOURCE_PATH} -Dsonar.java.binaries=. -Dsonar.coverage.jacoco.xmlReportPaths=./binaries/build/reports/jacoco/test/jacocoTestReport.xml" \
         -v "${SONAR_GITROOT}:/usr/src" \
         "${DOCKER_SONAR_CLI}";
     SCAN_RET_CODE="$?"
