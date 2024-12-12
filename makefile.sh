@@ -149,7 +149,7 @@ function scan() {
 
 function results() {
     # use this params to collect stats
-    curl -s -u "admin:sonarless" "http://localhost:${SONAR_INSTANCE_PORT}/api/measures/component?component=${SONAR_PROJECT_NAME}&metricKeys=file_complexity,cognitive_complexity,bugs,vulnerabilities,code_smells,quality_gate_details,violations,duplicated_lines_density,ncloc,coverage,reliability_rating,security_rating,security_review_rating,sqale_rating,security_hotspots,open_issues,complexity,files,functions,reliability_rating,duplicated_lines,duplicated_blocks,sqale_rating" \
+    curl -s -u "admin:sonarless" "http://localhost:${SONAR_INSTANCE_PORT}/api/measures/component?component=${SONAR_PROJECT_NAME}&metricKeys=file_complexity,cognitive_complexity,bugs,vulnerabilities,code_smells,quality_gate_details,violations,duplicated_lines_density,ncloc,coverage,reliability_rating,security_rating,security_review_rating,security_hotspots,open_issues,complexity,files,functions,reliability_rating,duplicated_lines,duplicated_blocks,alert_status,quality_gate_details,accepted_issues,high_impact_accepted_issues,maintainability_issues,reliability_issues,security_issues,bugs,reliability_rating,vulnerabilities,security_rating,security_hotspots,security_hotspots_reviewed,security_review_rating,code_smells,sqale_rating,sqale_index,coverage,lines_to_cover,tests,duplicated_lines_density,duplicated_blocks,ncloc,ncloc_language_distribution,projects,lines" \
         | jq -r > "${SONAR_GITROOT}/${SONAR_METRICS_PATH}"
     cat "${SONAR_GITROOT}/${SONAR_METRICS_PATH}"
     echo "Scan results written to  ${SONAR_GITROOT}/${SONAR_METRICS_PATH}"
